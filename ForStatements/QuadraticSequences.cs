@@ -4,20 +4,43 @@
     {
         public static uint CountQuadraticSequenceTerms(long a, long b, long c, long maxTerm)
         {
-            // TODO Task 6. Implement the method that returns the number of the quadratic sequence terms that are less than or equals to the maxTerm.
-            throw new NotImplementedException();
+            uint count = 0;
+            for (long n = 1; ; n++)
+            {
+                long term = (a * n * n) + (b * n) + c;
+                if (term > maxTerm)
+                {
+                    break;
+                }
+
+                count++;
+            }
+
+            return count;
         }
 
         public static ulong GetQuadraticSequenceTermsProduct1(uint count)
         {
-            // TODO Task 7. Implement the method that returns the product of the first count quadratic sequence terms.
-            throw new NotImplementedException();
+            ulong product = 1;
+            for (uint n = 1; n <= count; n++)
+            {
+                ulong term = (7 * n * n) + (4 * n) + 2;
+                product *= term;
+            }
+
+            return product;
         }
 
         public static ulong GetQuadraticSequenceProduct2(long a, long b, long c, long startN, long count)
         {
-            // TODO Task 8. Implement the method that returns the product of count quadratic sequence terms starting with the startN term.
-            throw new NotImplementedException();
+            ulong product = 1;
+            for (long n = startN; n < startN + count; n++)
+            {
+                long term = (a * n * n) + (b * n) + c;
+                product *= (ulong)term;
+            }
+
+            return product;
         }
     }
 }
