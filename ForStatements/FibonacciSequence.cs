@@ -32,11 +32,7 @@ namespace ForStatements
 
         public static ulong GetProductOfFibonacciNumberDigits(ulong n)
         {
-            if (n == 0)
-            {
-                return 0;
-            }
-            else
+            if (n != 0)
             {
                 int fibN = GetFibonacciNumber((int)n);
                 ulong product = 1;
@@ -49,6 +45,10 @@ namespace ForStatements
                 }
 
                 return product;
+            }
+            else
+            {
+                return 0;
             }
         }
     }
